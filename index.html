@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Site Dark Moderno</title>
+
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    :root{
+      --bg:#0f0a14;
+      --card:#1a1322;
+      --pink:#ff4fa3;
+      --pink-dark:#c21874;
+      --purple:#8b5cf6;
+      --text:#f3f3f3;
+      --gray:#b9b9b9;
+    }
+
+    body{
+      background: linear-gradient(135deg, #ffffff, #ecb8e591 , #ffffff);
+      color: var(--text);
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      padding:25px;
+    }
+
+    .container{
+      width:100%;
+      max-width:1100px;
+
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    /* HEADER */
+
+    header{
+      width:100%;
+      padding:22px;
+
+      border-radius:10px;
+
+      display:flex;
+      justify-content:center;
+
+    }
+
+    .search-box{
+      width:100%;
+      max-width:650px;
+
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .search-box input{
+      flex:1;
+
+      background:#ffffff;
+      border:1px solid #ecb8e569;
+
+      color:white;
+
+      padding:15px 18px;
+
+      border-radius:5px;
+
+      font-size:16px;
+
+      outline:none;
+
+      transition:0.3s;
+    }
+
+    .search-box input:focus{
+      border-color:var(--pink);
+      box-shadow:0 0 10px rgba(255,79,163,0.3);
+    }
+
+    .search-box button{
+      width:55px;
+      height:55px;
+
+      border:none;
+
+     background:#ecb8e5;
+      color:white;
+
+      border-radius:5px;
+
+      cursor:pointer;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      transition:0.3s;
+    }
+
+    .search-box button:hover{
+      transform:scale(1.05);
+      opacity:0.9;
+    }
+
+    /* MAIN */
+
+    main{
+      width:100%;
+
+      background: rgba(255, 255, 255, 0.96);
+
+      border:1px solid rgba(255,255,255,0.06);
+
+      border-radius:10px;
+
+      padding:40px 30px;
+
+      text-align:center;
+
+      box-shadow:
+      0 0 25px rgba(139, 92, 246, 0.08);
+    }
+
+    main h1{
+      font-size:2.3rem;
+
+      margin-bottom:18px;
+
+      background: linear-gradient(
+        90deg,
+        var(--pink),
+        #ff87c5,
+        var(--purple)
+      );
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    main p{
+      color:var(--gray);
+
+      max-width:700px;
+
+      margin:0 auto 35px;
+
+      line-height:1.7;
+    }
+
+    /* CARROSSEL */
+
+    .carousel-container{
+      width:100%;
+      overflow:hidden;
+
+      border-radius:10px;
+
+      position:relative;
+    }
+
+    .carousel{
+      display:flex;
+      transition:transform 0.5s ease;
+    }
+
+    .carousel img{
+      width:100%;
+      height:420px;
+
+      object-fit:cover;
+
+      flex-shrink:0;
+
+      border-radius:10px;
+    }
+
+    /* BOTÕES */
+
+    .carousel-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+
+      width:45px;
+      height:45px;
+
+      border:none;
+
+      border-radius:8px;
+
+      background:rgba(0,0,0,0.5);
+
+      color:white;
+
+      cursor:pointer;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      transition:0.3s;
+    }
+
+    .carousel-btn:hover{
+      background:var(--pink);
+    }
+
+    .prev{
+      left:12px;
+    }
+
+    .next{
+      right:12px;
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:768px){
+
+      body{
+        padding:15px;
+      }
+
+      header,
+      main{
+        padding:20px;
+      }
+
+      .search-box{
+        flex-direction:row;
+      }
+
+      main h1{
+        font-size:1.7rem;
+      }
+
+      .carousel img{
+        height:250px;
+      }
+
+      .search-box button{
+        width:52px;
+        height:52px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+
+    <header>
+
+      <div class="search-box">
+
+        <input
+          type="text"
+          placeholder="Pesquisar..."
+        />
+
+        <button>
+          <span class="material-icons">
+            search
+          </span>
+        </button>
+
+      </div>
+
+    </header>
+
+    <!-- MAIN -->
+
+    <main>
+
+    
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non amet debitis 
+        provident cupiditate iste. Odit, nihil mollitia incidunt nam perferendis 
+        laborum eum sit distinctio quia, accusamus neque provident illo rem.
+      </p>
+
+      <!-- CARROSSEL -->
+
+      <div class="carousel-container">
+
+        <button class="carousel-btn prev">
+          &#10094;
+        </button>
+
+        <div class="carousel">
+
+          <img src="" alt="Imagem 1">
+
+          <img src="https://picsum.photos/id/1018/1200/700" alt="Imagem 2">
+
+          <img src="https://picsum.photos/id/1025/1200/700" alt="Imagem 3">
+
+        </div>
+
+        <button class="carousel-btn next">
+          &#10095;
+        </button>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script>
+
+    const carousel =
+      document.querySelector('.carousel');
+
+    const images =
+      document.querySelectorAll('.carousel img');
+
+    let index = 0;
+
+    function updateCarousel(){
+      carousel.style.transform =
+      `translateX(-${index * 100}%)`;
+    }
+
+    document.querySelector('.next')
+    .addEventListener('click', () => {
+
+      index++;
+
+      if(index >= images.length){
+        index = 0;
+      }
+
+      updateCarousel();
+    });
+
+    document.querySelector('.prev')
+    .addEventListener('click', () => {
+
+      index--;
+
+      if(index < 0){
+        index = images.length - 1;
+      }
+
+      updateCarousel();
+    });
+
+    // automático
+
+    setInterval(() => {
+
+      index++;
+
+      if(index >= images.length){
+        index = 0;
+      }
+
+      updateCarousel();
+
+    }, 4000);
+
+  </script>
+
+</body>
+</html>
